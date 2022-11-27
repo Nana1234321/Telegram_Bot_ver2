@@ -49,7 +49,7 @@ def start(m, res=False):
     markup.add(item1, item2)
 
     bot.send_message(
-        m.chat.id, 'Отправьте мне любое слово, и я найду его значение на Wikipedia')
+        m.chat.id, 'Отправьте мне любое слово, и я найду его значение на Wikipediaа')
 # Получение сообщений от юзера
 
 
