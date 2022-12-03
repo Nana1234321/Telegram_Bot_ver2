@@ -59,11 +59,13 @@ def handle_text(message):
         bot.send_message(message.chat.id, str(random.randint(0, 100)))
     elif message.text == '🙃Как дела?':
         bot.send_message(message.chat.id, 'Отлично, сам как?')
-    elif message not in cache.keys():
-        bot.send_message(message.chat.id, getwiki(message.text))
-        cache[message] = str(getwiki(message.text))
+    elif message.text not in cache:
+        s = getwiki(message.text)
+        bot.send_message(message.chat.id, "from wiki")
+        bot.send_message(message.chat.id, s)
+        cache[message.text] = s
     else:
-        bot.send_message(message.chat.id, cache.get(message, 0))
+        bot.send_message(message.chat.id, cache.get(message.text, 0))
 
 
 # Запускаем бота
